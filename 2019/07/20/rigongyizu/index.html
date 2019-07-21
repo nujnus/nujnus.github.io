@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="nujnus">
 <meta property="og:description" content="github切换账号时, terminal可以这样改 1git config credential.username &amp;quot;新账号&amp;quot;  hexo deploy之前, 依赖如下这个包 1npm install hexo-deployer-git --save  关于如何让朋友圈连接有小图标:12345&amp;lt;head&amp;gt;&amp;lt;div id=&amp;apos;wx_pic&amp;apos;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-20T01:04:05.230Z">
+<meta property="og:updated_time" content="2019-07-21T21:03:11.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日拱一卒">
 <meta name="twitter:description" content="github切换账号时, terminal可以这样改 1git config credential.username &amp;quot;新账号&amp;quot;  hexo deploy之前, 依赖如下这个包 1npm install hexo-deployer-git --save  关于如何让朋友圈连接有小图标:12345&amp;lt;head&amp;gt;&amp;lt;div id=&amp;apos;wx_pic&amp;apos;">
@@ -139,12 +139,17 @@
 <h2 id="关于调整gpu的-power-limit"><a href="#关于调整gpu的-power-limit" class="headerlink" title="关于调整gpu的 power limit:"></a>关于调整gpu的 power limit:</h2><p>先要 启动n卡的persistence mode</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@test ~]# nvidia-smi -i 0 -pm ENABLED</span><br><span class="line">Enabled persistence mode for GPU 00000000:01:00.0.</span><br><span class="line">All done.</span><br><span class="line">[root@test ~]# nvidia-smi -i 0 -pl 110</span><br><span class="line">Power limit for GPU 00000000:01:00.0 was set to 110.00 W from 120.00 W.</span><br><span class="line">All done.</span><br><span class="line">[root@test ~]# nvidia-smi -i 0 --format=csv --query-gpu=power.limit</span><br><span class="line">power.limit [W]</span><br><span class="line">110.00 W</span><br></pre></td></tr></table></figure>
 
+<h2 id="关于如何在ipython和ipdb中启用-vim-keybinding"><a href="#关于如何在ipython和ipdb中启用-vim-keybinding" class="headerlink" title="关于如何在ipython和ipdb中启用 vim keybinding:"></a>关于如何在ipython和ipdb中启用 vim keybinding:</h2><p>ipython中使用vim 快捷键<br>第一种方法:<br>$ ipython –TerminalInteractiveShell.editing_mode=vi</p>
+<p>第二种方法:<br>在文件:<br>~/.ipython/profile_default/ipython_config.py  (如果没有就创建该文件)<br>中添加内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.TerminalInteractiveShell.editing_mode = &apos;vi&apos;</span><br></pre></td></tr></table></figure>
+
+<p>#如果要ipdb也启用 vim keybinding , 需要采用上面第二种方法. (因为ipdb也是调用了ipython)</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://sunnycloudy.github.io/2019/07/20/rigongyizu/" data-id="cjyaq29510000qc1is4kl95cg" class="article-share-link">Share</a>
+        <a data-url="https://sunnycloudy.github.io/2019/07/20/rigongyizu/" data-id="cjydg7jj60000lu1iiofd9k6q" class="article-share-link">Share</a>
       
 
       
@@ -152,6 +157,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2019/07/21/yolov3fenxi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 

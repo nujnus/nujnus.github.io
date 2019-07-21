@@ -100,6 +100,37 @@
   
 
     
+    <article id="post-yolov3fenxi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/21/yolov3fenxi/" class="article-date">
+  <time datetime="2019-07-21T15:46:38.969Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="yolo-v3-从理论到落地分析"><a href="#yolo-v3-从理论到落地分析" class="headerlink" title="yolo v3 从理论到落地分析"></a>yolo v3 从理论到落地分析</h1><h2 id="入坑的预备知识"><a href="#入坑的预备知识" class="headerlink" title="入坑的预备知识"></a>入坑的预备知识</h2><h2 id="理论1"><a href="#理论1" class="headerlink" title="理论1"></a>理论1</h2><h2 id="理论1落地分析"><a href="#理论1落地分析" class="headerlink" title="理论1落地分析"></a>理论1落地分析</h2>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://sunnycloudy.github.io/2019/07/21/yolov3fenxi/" data-id="cjydg7jja0001lu1iv91ozrte" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+    
+  
+
+    
     <article id="post-rigongyizu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/20/rigongyizu/" class="article-date">
@@ -139,12 +170,17 @@
 <h2 id="关于调整gpu的-power-limit"><a href="#关于调整gpu的-power-limit" class="headerlink" title="关于调整gpu的 power limit:"></a>关于调整gpu的 power limit:</h2><p>先要 启动n卡的persistence mode</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@test ~]# nvidia-smi -i 0 -pm ENABLED</span><br><span class="line">Enabled persistence mode for GPU 00000000:01:00.0.</span><br><span class="line">All done.</span><br><span class="line">[root@test ~]# nvidia-smi -i 0 -pl 110</span><br><span class="line">Power limit for GPU 00000000:01:00.0 was set to 110.00 W from 120.00 W.</span><br><span class="line">All done.</span><br><span class="line">[root@test ~]# nvidia-smi -i 0 --format=csv --query-gpu=power.limit</span><br><span class="line">power.limit [W]</span><br><span class="line">110.00 W</span><br></pre></td></tr></table></figure>
 
+<h2 id="关于如何在ipython和ipdb中启用-vim-keybinding"><a href="#关于如何在ipython和ipdb中启用-vim-keybinding" class="headerlink" title="关于如何在ipython和ipdb中启用 vim keybinding:"></a>关于如何在ipython和ipdb中启用 vim keybinding:</h2><p>ipython中使用vim 快捷键<br>第一种方法:<br>$ ipython –TerminalInteractiveShell.editing_mode=vi</p>
+<p>第二种方法:<br>在文件:<br>~/.ipython/profile_default/ipython_config.py  (如果没有就创建该文件)<br>中添加内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.TerminalInteractiveShell.editing_mode = &apos;vi&apos;</span><br></pre></td></tr></table></figure>
+
+<p>#如果要ipdb也启用 vim keybinding , 需要采用上面第二种方法. (因为ipdb也是调用了ipython)</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="https://sunnycloudy.github.io/2019/07/20/rigongyizu/" data-id="cjyaq29510000qc1is4kl95cg" class="article-share-link">Share</a>
+        <a data-url="https://sunnycloudy.github.io/2019/07/20/rigongyizu/" data-id="cjydg7jj60000lu1iiofd9k6q" class="article-share-link">Share</a>
       
 
       
